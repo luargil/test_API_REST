@@ -1,0 +1,361 @@
+{
+	"info": {
+		"_postman_id": "268a3a01-2afa-43e5-b404-4ad48350b1a3",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21667582"
+	},
+	"item": [
+		{
+			"name": "Request de Cursos con Token Válido",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "o2yo12oPGJq.G72z9uF39Hw8bEYte3SGa6WkBslKwmgN2BDTpjq4rTmJUR26",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "a2ya10a1Dr1WY/GrB99.zssr.4n6ex0cy5MS3cBNe6G0MhHEKwgwYnzugb4K",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "nombre",
+							"value": "gracie",
+							"description": "mino",
+							"type": "text"
+						},
+						{
+							"key": "apellido",
+							"value": "mino",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "gracie@gmail.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://apirest.com/cursos",
+					"protocol": "http",
+					"host": [
+						"apirest",
+						"com"
+					],
+					"path": [
+						"cursos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request de Cursos con paginación",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "o2yo12oPGJq.G72z9uF39Hw8bEYte3SGa6WkBslKwmgN2BDTpjq4rTmJUR26",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "a2ya10a1Dr1WY/GrB99.zssr.4n6ex0cy5MS3cBNe6G0MhHEKwgwYnzugb4K",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://apirest.com/cursos/?page=1",
+					"protocol": "http",
+					"host": [
+						"apirest",
+						"com"
+					],
+					"path": [
+						"cursos",
+						""
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registro de clientes",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "nombre",
+							"value": "Nombre",
+							"type": "text"
+						},
+						{
+							"key": "apellido",
+							"value": "Apellido",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "nombre@apellido.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://apirest.com/registro",
+					"protocol": "http",
+					"host": [
+						"apirest",
+						"com"
+					],
+					"path": [
+						"registro"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Creación de un curso, con token válido de cliente",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "o2yo12oPGJq.G72z9uF39Hw8bEYte3SGa6WkBslKwmgN2BDTpjq4rTmJUR26",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "a2ya10a1Dr1WY/GrB99.zssr.4n6ex0cy5MS3cBNe6G0MhHEKwgwYnzugb4K",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "titulo",
+							"value": "Curso de API REST con php",
+							"type": "text"
+						},
+						{
+							"key": "descripcion",
+							"value": "hacer una API REST con php y probarla con Postman",
+							"type": "text"
+						},
+						{
+							"key": "instructor",
+							"value": "Raul Gil",
+							"type": "text"
+						},
+						{
+							"key": "imagen",
+							"value": "https://miro.medium.com/max/406/0*MI6Cy_YYSexyhB6q",
+							"type": "text"
+						},
+						{
+							"key": "precio",
+							"value": "100",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://apirest.com/cursos",
+					"protocol": "http",
+					"host": [
+						"apirest",
+						"com"
+					],
+					"path": [
+						"cursos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request de un curso específico con autentificación de token de cliente",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "o2yo12oPGJq.G72z9uF39Hw8bEYte3SGa6WkBslKwmgN2BDTpjq4rTmJUR26",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "a2ya10a1Dr1WY/GrB99.zssr.4n6ex0cy5MS3cBNe6G0MhHEKwgwYnzugb4K",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://apirest.com/cursos/11",
+					"protocol": "http",
+					"host": [
+						"apirest",
+						"com"
+					],
+					"path": [
+						"cursos",
+						"11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualización de un curso usando autentificación con token de cliente",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "o2yo12oPGJq.G72z9uF39Hw8bEYte3SGa6WkBslKwmgN2BDTpjq4rTmJUR26",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "a2ya10a1Dr1WY/GrB99.zssr.4n6ex0cy5MS3cBNe6G0MhHEKwgwYnzugb4K",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "titulo",
+							"value": "Actualizacion de curso de API REST con php",
+							"type": "text"
+						},
+						{
+							"key": "descripcion",
+							"value": "actualizar el curso de api rest con php y test con postman",
+							"type": "text"
+						},
+						{
+							"key": "instructor",
+							"value": "Raul Gil",
+							"type": "text"
+						},
+						{
+							"key": "imagen",
+							"value": "https://gitlab.com/uploads/-/system/project/avatar/13647465/rest-api_1_.png",
+							"type": "text"
+						},
+						{
+							"key": "precio",
+							"value": "150",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://apirest.com/cursos/11",
+					"protocol": "http",
+					"host": [
+						"apirest",
+						"com"
+					],
+					"path": [
+						"cursos",
+						"11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Borrado de un curso usando autentificación",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "o2yo12oPGJq.G72z9uF39Hw8bEYte3SGa6WkBslKwmgN2BDTpjq4rTmJUR26",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "a2ya10a1Dr1WY/GrB99.zssr.4n6ex0cy5MS3cBNe6G0MhHEKwgwYnzugb4K",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://apirest.com/cursos/11",
+					"protocol": "http",
+					"host": [
+						"apirest",
+						"com"
+					],
+					"path": [
+						"cursos",
+						"11"
+					]
+				},
+				"description": "solamente se puede borrar el curso que haya sido creado por el ccliente, se verifica que el id del creador sea correcto"
+			},
+			"response": []
+		}
+	]
+}
